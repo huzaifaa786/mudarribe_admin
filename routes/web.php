@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\FirebaseAuthController;
@@ -15,9 +16,7 @@ use App\Http\Controllers\FirebaseAuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TestController::class, 'index'])->name('home');
 
 Route::view('admin/layout', 'admin/layout')->name('admin.layout');
 

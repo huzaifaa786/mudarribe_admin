@@ -18,7 +18,7 @@ return [
      */
 
     'projects' => [
-        'app' => [
+        'mudarribe-fitness' => [
 
             /*
              * ------------------------------------------------------------------------
@@ -50,7 +50,19 @@ return [
              *
              */
 
-            'credentials' => env('FIREBASE_CREDENTIALS', env('GOOGLE_APPLICATION_CREDENTIALS')),
+            'credentials' => [
+                "type" => "service_account",
+                "project_id" => "mudarribe-fitness",
+                "private_key_id" => "25b32d01df6b3b9abb1da740abd1dc461a10470d",
+                "private_key" => "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCu+PSoi4xFzqHx\nqOhFZFYYDxGs15akLSmUYG6pDEO+BL9xxx24SS3jUAVwKD1SAPDyPtjgbbgEHDJV\nHzFxv1f2iuH3DRja9/uImmLFW11Zi18Qlisf1CdDd3PbO8THuqzhF/tzphuQjD6w\nY0Tw63/GWw7ORuAinRXH5JWDMKz08m1g5rAzXKy3/0+/9Lm1m1ztnU5VIz9Nr+9I\nQ9pMOoZ9xKdHu3OQcn94uyfGdIpk2/V6b2Ya0ErcUpHnhFRCT3mOSs5Z5ectt86c\niFtaWfQeCmywudN1yd9AU7bR01iVOoUcK6K9UzE5PjRVLleV8gR8yL0Zs0mCIYgT\no9ZUZ9tHAgMBAAECggEAHYEXaFBXr/G+9wv/VqwrpFTuKxITcc23xDBamKDbz2/n\nhF0KEugsF7eHozj11h0YhBC662U08WR7zES9Rqv4Pjd/EPSha1MDlC5MV3EnlZDd\nz+MylGRm1oaO/7ndXbyJqE8t9HtfDInJjF7A4ksjuaPjJD9pTgzk/lb6KywLDiaH\nfCf/dSJxw7uDaiyDeH3u0/A95Uin19HO+nNSZC6UMSpmG1tZgFOr8PdbNqjaVfmJ\nNBmmAuhOyYBmFSzA/ocGoYO7fnGiy/5AKzIJCxhO0mtA+Vcs7Se0Io/hX1Z16lis\nAbW7Fl38EzM2OvTqPLOVlBrGoTLeJy00devNFB8k+QKBgQDd6m9bcNfgtLyiPzY4\n8xEjQKn7FCFxYIH/gfjtMc6XXXplH/3pcxNDOEW57YsHVrN1j0M8/OeYiLb6Zrs1\nfsqpRq67U2wYvkzsgW+uWDkwAOeBPpVJJavAe671t4BtFCpZ5BbqFGSiYXx6xnG4\nHP0AhU65whc9LXcpdK1yPDDiRQKBgQDJ2L7UBu2fUp5Q/OOHhilo9YCvEbDQw8qE\nBtMGsHDh/0/nicP1p9muWXJ7oVw0HKO2P/AXIK5xYBzdK8u74ztObPGZukJGBfHX\nNTLwlBuUNtkhCWK7pb7JxLZ0QiYisDzA/0kgQMF3z+uTGWas0xj2KtleILI7fopF\nWDuQCn7mGwKBgQDL9LAeAYtXSaVpFOG326YvmTngujK2ajVwaLso/TLbqR1ZndqW\n2Z2llS14YZr6xrOvY1kvz1znsxdA8nQzCXInu//RyS07XIOEhr3nJcyBkwMypRs9\nnDLLeKFn0hxlpDf8YAazYsTO/PwUNxjDV1ksRlkBnyIOpx+y6TqUGD/xZQKBgDx6\nCJMWkFPQOUcivjl45Sdhh3Ds6AFk6GSudsPmUawlBxfkmyYbaIlom3iXXDzw58xP\nU+xaCmpF1eAeoyhkaPySf8EDoZ/BYDiO4/hZJ/o8hMn1OfPnMUba/Z/PwgVasJlS\n4+IaBN2VGow0bCMUDMKVDBO70CsrOtqUGSSLQIJJAoGBANEJ4Bo+O2KmJoRECGhF\n/CpVNa9hpk4A9iv2dbD8ArNn+h930kLxMe7VApD+igNalHHJ8DHsidRUmraZ2gyW\ncAiSKeF3DRYFUafD78mtdI5LvgCjtxZdi2IA3KGgmcHq/Xoc4OSV5ouVHZ1AjHYZ\nQbt+jFLb2Kzu9pZaKFkXrHPh\n-----END PRIVATE KEY-----\n",
+                "client_email" => "firebase-adminsdk-ehb70@mudarribe-fitness.iam.gserviceaccount.com",
+                "client_id" => "116336733087150749989",
+                "auth_uri" => "https://accounts.google.com/o/oauth2/auth",
+                "token_uri" => "https://oauth2.googleapis.com/token",
+                "auth_provider_x509_cert_url" => "https://www.googleapis.com/oauth2/v1/certs",
+                "client_x509_cert_url" => "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ehb70%40mudarribe-fitness.iam.gserviceaccount.com",
+                "universe_domain" => "googleapis.com"
+            ],
 
             /*
              * ------------------------------------------------------------------------
