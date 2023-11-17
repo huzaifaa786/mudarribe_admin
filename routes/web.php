@@ -4,6 +4,8 @@ use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\FirebaseAuthController;
+use App\Livewire\Admin\Index;
+use App\Livewire\Auth\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,8 @@ Route::post('admin/auth',[AuthController::class,'login'])->name('admin.auth');
 Route::get('admin/logout',[AuthController::class,'logout'])->name('admin.logout');
 
 
-Route::get('auth',[FirebaseAuthController::class,'auth'])->name('auth');
+Route::get('admin/index',Index::class)->name('admin.index');
+Route::get('admin/login',Login::class)->name('admin.login');
+
+
+
