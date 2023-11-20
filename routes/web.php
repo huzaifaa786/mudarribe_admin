@@ -22,7 +22,7 @@ Route::get('/', [TestController::class, 'index'])->name('home');
 
 Route::view('admin/layout', 'admin/layout')->name('admin.layout');
 
-Route::view('admin/login','admin.login')->name('admin.login');
+
 Route::post('admin/auth',[AuthController::class,'login'])->name('admin.auth');
 Route::get('admin/logout',[AuthController::class,'logout'])->name('admin.logout');
 
