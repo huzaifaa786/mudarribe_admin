@@ -29,6 +29,6 @@ class TestController extends Controller
             ->withLimit(499);
 
         $users = $this->auth->queryUsers($userQuery);
-        dd($users);
+        // dd($users);
     }
 }
