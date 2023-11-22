@@ -17,6 +17,12 @@
     <!-- Main Styling -->
     <link href="{{ asset('admin/assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5') }}" rel="stylesheet" />
 
+    <link id="pagestyle" href="{{ asset('admin/assets/css/soft-ui-dashboard.css?v=1.0.7') }}" rel="stylesheet" />
+
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+   <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
     <!-- Nepcha Analytics (nepcha.com) -->
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
     <script defer data-site="Mudarribe Fitness" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
@@ -48,7 +54,7 @@
 
     @include('components.layouts.sidebar')
 
-
+    <script src="{{asset('admin/assets/js/soft-ui-dashboard.min.js?v=1.0.7')}}"></script>
 </body>
 <!-- plugin for scrollbar  -->
 <script src="{{asset('admin/assets/js/plugins/perfect-scrollbar.min.js')}}" async></script>
@@ -58,5 +64,18 @@
 <script src="{{asset('admin/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5')}}" async></script>
 <!-- plugin for charts  -->
 <script src="{{asset('admin/assets/js/plugins/chartjs.min.js')}}" async></script>
+
+<script src="{{asset('admin/assets/js/core/popper.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/core/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
+
+<script>
+    $(function()
+       {
+          $("#my_table").dataTable();
+       });
+ </script>
+
 
 </html>

@@ -26,17 +26,23 @@
             display: none !important;
         }
     </style>
-    
+
     <wireui:scripts />
     @filamentStyles
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 
   <body class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
-
+    @livewireScripts
     {{$slot}}
 
   </body>
+  <script>
+    Livewire.on('redirect-to-admin-index', () => {
+        window.location.href = '/admin/index';
+    });
+    </script>
   <!-- plugin for scrollbar  -->
   <script src="{{asset('admin/assets/js/plugins/perfect-scrollbar.min.js')}}" async></script>
   <!-- main script file  -->

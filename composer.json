@@ -15,7 +15,7 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^3.1",
+        "livewire/livewire": "^3.2",
         "wireui/wireui": "^1.18"
     },
     "require-dev": {

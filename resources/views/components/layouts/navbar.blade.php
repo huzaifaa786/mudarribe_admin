@@ -76,7 +76,7 @@
       <div class="px-6 pt-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
         <div class="float-left">
           <h5 class="mt-4 mb-0">Mudarribe-Fitness Configurator</h5>
-          
+
         </div>
         <div class="float-right mt-6">
           <button fixed-plugin-close-button class="inline-block p-0 mb-4 text-xs font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro ease-soft-in tracking-tight-soft bg-150 bg-x-25 active:opacity-85 text-slate-700">
