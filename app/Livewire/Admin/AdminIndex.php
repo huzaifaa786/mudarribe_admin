@@ -17,13 +17,13 @@ class AdminIndex extends Component
     {
         $this->database = FirebaseService::connect();
         $this->auth = Firebase::auth();
-        //$userQuery= UserQuery::all()->withFilter(UserQuery::FILTER_EMAIL, 'adil@gmail.com');
-        $userQuery = UserQuery::all();
-        // ->inDescendingOrder()
-        //     ->withOffset(1)
-        //     ->withLimit(499);
+        $userQuery = UserQuery::all()
+        ->inDescendingOrder()
+            ->withOffset(1)
+            ->withLimit(499);
 
         $users = $this->auth->queryUsers($userQuery);
+        //dd($users);
         return view('livewire.admin.admin-index',['users'=>$users]);
     }
 }

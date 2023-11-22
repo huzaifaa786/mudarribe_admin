@@ -61,7 +61,7 @@
                             class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
 
                             <div class="flex-auto p-6">
-                                <form role="form text-left" action="{{route('admin.auth')}}" method="POST">
+                                <form role="form text-left" action="{{ route('admin.auth') }}" method="POST">
                                     @csrf
                                     <div class="mb-4">
                                         <label for="">Email</label>
@@ -82,6 +82,15 @@
                                             in</button>
                                     </div>
                                 </form>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

@@ -25,5 +25,9 @@ class AuthController extends Controller
         {
             return redirect()->route('admin.index');
         }
+        else if($response == 'INVALID_LOGIN_CREDENTIALS')
+        {
+            return redirect()->back();
+        }
     }
 }
