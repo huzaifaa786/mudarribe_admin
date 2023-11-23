@@ -10,11 +10,17 @@
                         Email
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Phone #
-                    </th>
-                    <th scope="col" class="px-6 py-3">
                         User Type
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                       Status
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Gender
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Bio
+                     </th>
                     <th scope="col" class="px-6 py-3">
                         Action
                     </th>
@@ -26,20 +32,30 @@
 
                     <td scope="row" class="flex items-center px-4 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                         <div class="ps-3">
-                            <div class="text-base font-semibold">{{$user->displayName}}</div>
+                            <div class="text-base font-semibold">{{ $user['name'] }}</div>
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                        {{$user->email}}
+                        {{$user['email']}}
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex items-center">
-                           {{$user->phoneNumber}}
+                           {{$user['userType']}}
                         </div>
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex items-center">
-                           {{$user->email}}
+                           {{$user['status']}}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center">
+                           {{$user['gender']}}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center">
+                           {{$user['bio']}}
                         </div>
                     </td>
                     <td class="px-6 py-4">

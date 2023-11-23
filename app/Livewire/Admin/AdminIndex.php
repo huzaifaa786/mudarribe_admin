@@ -7,6 +7,8 @@ use Kreait\Laravel\Firebase\Facades\Firebase;
 use App\Services\FirebaseService;
 use Kreait\Firebase\Auth\UserQuery;
 use Livewire\Component;
+use Google\Cloud\Firestore\FirestoreClient;
+
 
 class AdminIndex extends Component
 {
@@ -15,15 +17,22 @@ class AdminIndex extends Component
 
     public function render()
     {
-        $this->database = FirebaseService::connect();
-        $this->auth = Firebase::auth();
-        $userQuery = UserQuery::all()
-        ->inDescendingOrder()
-            ->withOffset(1)
-            ->withLimit(499);
+        // Create Firestore client
+        $firestore = app('firebase.firestore');
 
-        $users = $this->auth->queryUsers($userQuery);
-        //dd($users);
-        return view('livewire.admin.admin-index',['users'=>$users]);
+        // Fetch data from "users" collection
+        $usersCollection = $firestore->database()->collection('users')->where('userType', '=', 'trainer');
+        $userDocuments = $usersCollection->documents();
+
+        // Process and display data
+        $users = [];
+
+        foreach ($userDocuments as $userDocument) {
+            $data = $userDocument->data(); // Get the document data
+            $users[] = $data; // Store the data in the $users array
+        }
+        // dd($users);
+
+        return view('livewire.admin.admin-index', ['users' => $users]);
     }
 }
