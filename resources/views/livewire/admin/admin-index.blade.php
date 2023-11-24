@@ -74,7 +74,7 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                        <x-button.circle icon="trash" wire:click="deleteUser('{{ $user['id'] }}')" spinner="deleteUser('{{ $user['id'] }}')" class="text-red-500 "  />
+                        <x-button.circle icon="trash" wire:click="deleteUser('{{ $user['id'] }}')" spinner="deleteUser('{{ $user['id'] }}')" class="text-red-500"  />
                     </td>
                     <td class="px-6 py-4">
                         @if ($user['status'] == 0)
@@ -86,9 +86,9 @@
                             </x-slot>
                         </x-badge>
                         @elseif ($user['status'] == 1)
-                        <button class="rounded-xl border px-2 py-1 bg-yellow-300 text-white" wire:click="approveUser('{{ $user['id'] }}')">Approve</button>
+                        <x-button rounded label="Approve" wire:click="approveUser('{{ $user['id'] }}')" spinner="approveUser('{{ $user['id'] }}')" class="bg-yellow-300 text-white p-3" />
                         @else
-                        <x-badge rounded primary label="Approved"  class="bg-green-500" />
+                        <x-badge rounded label="Approved"  class="bg-green-500 text-white" />
 
                         @endif
                     </td>

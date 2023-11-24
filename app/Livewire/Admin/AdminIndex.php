@@ -2,19 +2,19 @@
 
 namespace App\Livewire\Admin;
 use Livewire\Component;
+use Kreait\Laravel\Firebase\Facades\Firebase;
 
 class AdminIndex extends Component
 {
     protected $auth;
 
-
     public $users;
 
     public function deleteUser($id)
     {
-
-        app('firebase.firestore')->database()->collection('users')->document($id)->delete();
+        $this->auth = Firebase::auth();
         $this->auth->deleteUser($id);
+        app('firebase.firestore')->database()->collection('users')->document($id)->delete();
     }
 
     public function approveUser($id)

@@ -10,7 +10,7 @@ class AuthController extends Controller
     protected $auth;
     public function __construct()
     {
-    $this->auth = Firebase::auth();
+       $this->auth = Firebase::auth();
     }
     public function login(Request $request)
     {
