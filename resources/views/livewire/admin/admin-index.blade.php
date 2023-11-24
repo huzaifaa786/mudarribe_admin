@@ -18,6 +18,12 @@
                      <th scope="col" class="px-6 py-3">
                         Bio
                      </th>
+                     <th scope="col" class="px-6 py-3">
+                        Categories
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Languages
+                     </th>
                     <th scope="col" class="px-6 py-3">
                         Action
                     </th>
@@ -53,20 +59,20 @@
                            {{$user['bio']}}
                         </div>
                     </td>
-                    {{-- <td class="px-6 py-4">
+                    <td class="px-6 py-4">
                         <div class="flex items-center">
                             @foreach ($user['categories'] as $category)
-                                <span class="px-2 py-1 bg-gray-200 text-gray-800 rounded-full">{{$category}}</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full ml-2">{{$category}}</span>
                             @endforeach
                         </div>
-                    </td> --}}
-                    {{-- <td class="px-6 py-4">
+                    </td>
+                    <td class="px-6 py-4 ">
                         <div class="flex items-center">
                             @foreach ($user['languages'] as $language)
-                                <span class="px-2 py-1 bg-gray-200 text-gray-800 rounded-full">{{$language}}</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full ml-2">{{$language}}</span>
                             @endforeach
                         </div>
-                    </td> --}}
+                    </td>
                     <td class="px-6 py-4">
                         <x-button.circle icon="trash" wire:click="deleteUser('{{ $user['id'] }}')" spinner="deleteUser('{{ $user['id'] }}')" class="text-red-500 "  />
                     </td>
@@ -91,5 +97,9 @@
             </tbody>
         </table>
     </div>
+
+
+    {{-- --------------------------------------------------------------- --}}
+
 </div>
 

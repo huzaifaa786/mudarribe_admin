@@ -1,25 +1,20 @@
 <?php
 
 namespace App\Livewire\Admin;
-
-use Livewire\Attributes\Url;
-use Kreait\Laravel\Firebase\Facades\Firebase;
-use App\Services\FirebaseService;
-use Kreait\Firebase\Auth\UserQuery;
 use Livewire\Component;
-use Google\Cloud\Firestore\FirestoreClient;
-
 
 class AdminIndex extends Component
 {
-    private $database;
     protected $auth;
+
+
+    public $users;
 
     public function deleteUser($id)
     {
 
         app('firebase.firestore')->database()->collection('users')->document($id)->delete();
-        $this->render();
+        $this->auth->deleteUser($id);
     }
 
     public function approveUser($id)
@@ -27,25 +22,27 @@ class AdminIndex extends Component
         app('firebase.firestore')->database()->collection('users')->document($id)->update([['path' => 'status', 'value' => 2]]);
     }
 
-    public function render()
+    public function mount()
     {
-        // Create Firestore client
-        $firestore = app('firebase.firestore');
+        $this->fetchUsers();
+    }
 
-        // Fetch data from "users" collection
+    public function fetchUsers()
+    {
+        $this->users = [];
+        $firestore = app('firebase.firestore');
         $usersCollection = $firestore->database()->collection('users')->where('userType', '=', 'trainer');
         $userDocuments = $usersCollection->documents();
 
 
-        // Process and display data
-        $users = [];
-
         foreach ($userDocuments as $userDocument) {
-            $data = $userDocument->data(); // Get the document data
-            $users[] = $data; // Store the data in the $users array
+            $data = $userDocument->data();
+            $this->users[] = $data;
         }
-        // dd($users);
+    }
 
-        return view('livewire.admin.admin-index', ['users' => $users]);
+    public function render()
+    {
+        return view('livewire.admin.admin-index');
     }
 }
