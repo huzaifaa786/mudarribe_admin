@@ -17,15 +17,14 @@ class AdminIndex extends Component
 
     public function deleteUser($id)
     {
-        
+
         app('firebase.firestore')->database()->collection('users')->document($id)->delete();
         $this->render();
     }
 
     public function approveUser($id)
     {
-        app('firebase.firestore')->database()->collection('users')->document($id)->update([['path'=>'status','value'=>2]]);
-
+        app('firebase.firestore')->database()->collection('users')->document($id)->update([['path' => 'status', 'value' => 2]]);
     }
 
     public function render()
@@ -36,7 +35,7 @@ class AdminIndex extends Component
         // Fetch data from "users" collection
         $usersCollection = $firestore->database()->collection('users')->where('userType', '=', 'trainer');
         $userDocuments = $usersCollection->documents();
-      
+
 
         // Process and display data
         $users = [];

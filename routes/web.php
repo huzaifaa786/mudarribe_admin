@@ -25,3 +25,4 @@ Route::view('admin/login','auth.login')->name('admin.login');
 Route::post('admin/auth',[AuthController::class,'login'])->name('admin.auth');
 
 
+
