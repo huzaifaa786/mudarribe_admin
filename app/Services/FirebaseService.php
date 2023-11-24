@@ -26,9 +26,7 @@ class FirebaseService
             ])
                 ->withDatabaseUri('https://mudarribe-fitness-default-rtdb.firebaseio.com');
 
-                $firestore = $firebase->createFirestore();
-                $database = $firestore->database(); //FireStoreClient Object
-                $user = $database->collection('users');
-                dd($user);
+                $firestore = $firebase->createDatabase();
+                return $firestore;
     }
 }
