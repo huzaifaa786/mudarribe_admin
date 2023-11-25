@@ -23,7 +23,7 @@ class AuthController extends Controller
         $response = $this->auth->signInWithEmailAndPassword($email,$password);
         if($response != 'INVALID_LOGIN_CREDENTIALS')
         {
-            return redirect()->route('admin.index');
+            return redirect()->route('trainer.index');
         }
         else if($response == 'INVALID_LOGIN_CREDENTIALS')
         {
