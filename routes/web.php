@@ -27,5 +27,6 @@ Route::get('trainer/index',[TrainerController::class,'index'])->name('trainer.in
 Route::get('trainer/approve/{id}',[TrainerController::class,'approve'])->name('trainer.approve');
 Route::get('trainer/delete/{id}',[TrainerController::class,'delete'])->name('trainer.delete');
 
-
+Route::get('trainer/peding/index',[TrainerController::class,'pendingTrainers'])->name('trainer.pending');
+Route::get('trainer/rejected/index',[TrainerController::class,'rejectedTrainers'])->name('trainer.rejected');
 

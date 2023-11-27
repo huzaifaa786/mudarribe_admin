@@ -79,20 +79,7 @@
                     </div>
                 </td>
                 <td class="px-3 py-4">
-                    @if ($user['status'] == 0)
-                    <x-badge  rounded flat red label="Rejected" class="bg-red-100">
-                        <x-slot name="append" class="relative flex items-center w-2 h-2">
-                            <button type="button">
-                                <x-icon name="x" class="w-4 h-4" />
-                            </button>
-                        </x-slot>
-                    </x-badge>
-                    @elseif ($user['status'] == 1)
-                    <a href="{{route('trainer.approve',['id'=>$user['id']])}}">Approve</a>
-                    @else
                     <x-badge rounded label="Approved"  class="bg-green-500 text-white" />
-
-                    @endif
                 </td>
                 <td class="px-6 py-4">
                     <div class="rounded-full border w-8 h-8 content-center pl-2 pt-1">

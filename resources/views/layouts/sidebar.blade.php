@@ -1,8 +1,8 @@
 <aside id="sidebar"
-    class="bg-white mt-5 ml-5 rounded-xl shadow-lg flex hidden fixed top-0 left-0 z-20 flex-col flex-shrink-0 pt-16 w-64 h-full duration-200 lg:flex transition-width lg:w-64"
+    class="bg-white mt-5 ml-5 rounded-xl shadow-xl flex hidden fixed top-0 left-0 z-20 flex-col flex-shrink-0 pt-16 w-64 h-full duration-200 lg:flex transition-width lg:w-64"
     aria-label="Sidebar">
 
-    <div class="p-0 m-0">
+    <div class="-mt-8 mb-5">
         <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
             sidenav-close></i>
         <a class="block px-8 m-0 text-sm whitespace-nowrap text-slate-700" href="../pages/dashboard.html"
@@ -18,12 +18,12 @@
         <div class="flex overflow-y-auto flex-col flex-1 pt-8 pb-4">
             <div class="flex-1 px-3 bg-white" id="sidebar-items">
                 <ul class="pb-2 pt-1">
-                    <li>
+                    <li class="{{ ($n==1) ? 'active' : '' }}">
                         <a href="{{ route('trainer.index') }}"
-                            class="flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+                            class=" flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
                             sidebar-toggle-collapse="">
                             <div
-                                class="bg-white shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
+                                class="{{($n==1 ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
                                 <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>shop</title>
@@ -47,13 +47,13 @@
                             <span class="ml-3 text-dark-500 text-sm font-light" sidebar-toggle-item="">Dashboard</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ ($n==2) ? 'bg-slate-50 shadow-xl rounded-xl' : '' }}">
                         <button type="button"
                             class="w-full flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
                             sidebar-toggle-collapse="" aria-controls="dropdown-ecommerce"
                             data-collapse-toggle="dropdown-ecommerce">
                             <div
-                                class="bg-white shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
+                                class="{{($n==2 ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
                                 <svg class="text-dark" width="12px" height="12px" viewBox="0 0 42 44" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>basket</title>
@@ -89,14 +89,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://demos.creative-tim.com/soft-ui-flowbite-pro/e-commerce/billing/"
-                                    class="text-sm text-dark-500 font-light rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"><span>Billing</span><span
-                                        class="hidden">B</span></a>
+                                <a href="{{route('trainer.pending')}}"
+                                    class="text-sm text-dark-500 font-light rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"><span>Pending</span></a>
                             </li>
                             <li>
-                                <a href="https://demos.creative-tim.com/soft-ui-flowbite-pro/e-commerce/invoice/"
-                                    class="text-sm text-dark-500 font-light rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"><span>Invoice</span><span
-                                        class="hidden">I</span></a>
+                                <a href="{{route('trainer.rejected')}}"
+                                    class="text-sm text-dark-500 font-light rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"><span>Rejected</span>
+                                        </a>
                             </li>
                         </ul>
                     </li>

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,5 +65,7 @@
     data-cf-beacon="{&quot;rayId&quot;:&quot;82b340517fae4631&quot;,&quot;version&quot;:&quot;2023.10.0&quot;,&quot;token&quot;:&quot;1b7cbb72744b40c580f8633c6b62637e&quot;}"
     crossorigin="anonymous"></script>
 <script src="https://demos.creative-tim.com/soft-ui-flowbite-pro/app.bundle.js"></script>
+
+@yield('script')
 
 </html>
