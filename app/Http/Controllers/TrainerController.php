@@ -1,20 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use Kreait\Laravel\Firebase\Facades\Firebase;
-use Livewire\Attributes\Layout;
 
 class TrainerController extends Controller
 {
     public $auth;
     public $users;
+    public $posts;
     public function __construct()
     {
        $this->auth = Firebase::auth();
     }
-    public function index()
+    public function aprrovedTrainers()
     {
         $this->users = [];
         $firestore = app('firebase.firestore');
@@ -25,7 +23,7 @@ class TrainerController extends Controller
             $data = $userDocument->data();
             $this->users[] = $data;
         }
-        return view('trainer.approved',['users'=>$this->users,'n'=>2]);
+        return view('trainer.approved',['users'=>$this->users,'tab'=>'trainer']);
     }
 
     public function pendingTrainers()
@@ -39,7 +37,7 @@ class TrainerController extends Controller
             $data = $userDocument->data();
             $this->users[] = $data;
         }
-        return view('trainer.pending',['users'=>$this->users]);
+        return view('trainer.pending',['users'=>$this->users,'tab'=>'trainer']);
     }
 
     public function rejectedTrainers()
@@ -53,19 +51,35 @@ class TrainerController extends Controller
             $data = $userDocument->data();
             $this->users[] = $data;
         }
-        return view('trainer.rejected',['users'=>$this->users]);
+        return view('trainer.rejected',['users'=>$this->users,'tab'=>'trainer']);
+    }
+
+    public function trainerPosts($id)
+    {
+        $this->posts = [];
+        $firestore = app('firebase.firestore');
+        $trainerPost = $firestore->database()->collection('trainer_posts')->where('trainerId', '=', $id);
+        $trainserPosts = $trainerPost->documents();
+
+        foreach ($trainserPosts as $post) {
+            $data = $post->data();
+            $this->posts[] = $data;
+        }
+       return view('trainer.posts',['posts'=>$this->posts,'tab'=>'trainer']);
     }
 
     public function approve($id)
     {
         app('firebase.firestore')->database()->collection('users')->document($id)->update([['path' => 'status', 'value' => 2]]);
-        return redirect()->route('trainer.pending');
+        toastr()->success('Trainer approved successfully!', 'Congrats');
+        return redirect()->back();
     }
 
     public function delete($id)
     {
         $this->auth->deleteUser($id);
         app('firebase.firestore')->database()->collection('users')->document($id)->delete();
-        return redirect()->route('trainer.index');
+        toastr()->success('Trainer Deleted successfully!');
+        return redirect()->back();
     }
 }

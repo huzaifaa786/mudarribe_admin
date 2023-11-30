@@ -44,7 +44,7 @@
                 <div class="flex flex-wrap -mx-3 -mt-48 md:-mt-56 lg:-mt-48">
                     <div class="w-full max-w-full px-3 mx-auto mt-0 md:flex-0 shrink-0 md:w-7/12 lg:w-5/12 xl:w-4/12">
                         <div
-                            class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+                            class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-2xl rounded-2xl bg-clip-border">
 
                             <div class="flex-auto p-6">
                                 <form role="form text-left" action="{{ route('admin.auth') }}" method="POST">
@@ -57,10 +57,14 @@
                                     </div>
                                     <div class="mb-4">
                                         <label for="">Password</label>
-                                        <input type="password" name="password"
+                                        <input type="password" name="password" id="passwordInput"
                                             class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
                                             placeholder="Password" aria-label="Password"
                                             aria-describedby="password-addon" />
+                                    </div>
+                                    <div>
+                                        <input class="text-sm" type="checkbox" onclick="ShowPassword()"
+                                            class="border border-solid border-gray-300" style=" accent-color: #282E4E;"><span class="text-sm ml-2">Show Password</span>
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" name="submit"
@@ -69,7 +73,7 @@
                                     </div>
                                 </form>
                                 @if ($errors->any())
-                                    <div class="alert alert-danger">
+                                    <div class="alert alert-danger text-red-600">
                                         <ul>
                                             @foreach ($errors->all() as $error)
                                                 <li>{{ $error }}</li>
@@ -89,5 +93,17 @@
 <script src="{{ asset('admin/assets/js/plugins/perfect-scrollbar.min.js') }}" async></script>
 <!-- main script file  -->
 <script src="{{ asset('admin/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5') }}" async></script>
+
+<script>
+    function ShowPassword() {
+        var x = document.getElementById("passwordInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
 
 </html>

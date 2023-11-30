@@ -22,6 +22,7 @@
     <script defer data-site="Mudarribe Fitness" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
+    @yield('style')
     <wireui:scripts />
 
     <title>{{ config('app.name') }}</title>

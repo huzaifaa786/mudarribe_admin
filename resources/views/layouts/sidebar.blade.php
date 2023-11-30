@@ -18,12 +18,12 @@
         <div class="flex overflow-y-auto flex-col flex-1 pt-8 pb-4">
             <div class="flex-1 px-3 bg-white" id="sidebar-items">
                 <ul class="pb-2 pt-1">
-                    <li class="{{ ($n==1) ? 'active' : '' }}">
-                        <a href="{{ route('trainer.index') }}"
+                    <li class="{{ ($tab=='dashboard') ? 'bg-slate-50 shadow-lg rounded-xl' : '' }}">
+                        <a href="{{ route('dashboard.index') }}"
                             class=" flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
                             sidebar-toggle-collapse="">
                             <div
-                                class="{{($n==1 ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
+                                class="{{($tab=='dashboard' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
                                 <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>shop</title>
@@ -47,13 +47,13 @@
                             <span class="ml-3 text-dark-500 text-sm font-light" sidebar-toggle-item="">Dashboard</span>
                         </a>
                     </li>
-                    <li class="{{ ($n==2) ? 'bg-slate-50 shadow-xl rounded-xl' : '' }}">
+                    <li >
                         <button type="button"
-                            class="w-full flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+                            class="{{ ($tab=='trainer') ? 'bg-slate-50 shadow-md rounded-xl' : '' }} w-full flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
                             sidebar-toggle-collapse="" aria-controls="dropdown-ecommerce"
                             data-collapse-toggle="dropdown-ecommerce">
                             <div
-                                class="{{($n==2 ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
+                                class="{{($tab=='trainer' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
                                 <svg class="text-dark" width="12px" height="12px" viewBox="0 0 42 44" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>basket</title>
