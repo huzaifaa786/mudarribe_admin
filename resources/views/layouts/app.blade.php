@@ -39,8 +39,12 @@
 
 <body class="antialiased m-0 font-sans text-base font-normal leading-default bg-gray-50 text-slate-500">
     @vite('resources/css/app.css')
+
     @include('layouts.navbar')
     @include('layouts.sidebar')
+
+    {{------- delete confirmation modal -------}}
+    @include('components.modals.deleteModal')
 
 </body>
 
@@ -55,6 +59,8 @@
 <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js">
 </script>
+
+{{-- data table script --}}
 <script>
     new DataTable('#data_table');
 </script>
@@ -66,6 +72,14 @@
     data-cf-beacon="{&quot;rayId&quot;:&quot;82b340517fae4631&quot;,&quot;version&quot;:&quot;2023.10.0&quot;,&quot;token&quot;:&quot;1b7cbb72744b40c580f8633c6b62637e&quot;}"
     crossorigin="anonymous"></script>
 <script src="https://demos.creative-tim.com/soft-ui-flowbite-pro/app.bundle.js"></script>
+
+{{----------------delete modal script-------------------}}
+<script>
+    $('.deleteBtn').click(function() {
+        let id = this.id;
+        $('#popup-modal form').attr('action', '{{ route('trainer.delete', '') }}' + '/' + id);
+    });
+</script>
 
 @yield('script')
 

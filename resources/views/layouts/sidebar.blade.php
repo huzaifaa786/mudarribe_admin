@@ -47,6 +47,16 @@
                             <span class="ml-3 text-dark-500 text-sm font-light" sidebar-toggle-item="">Dashboard</span>
                         </a>
                     </li>
+                    <li class="{{ ($tab=='banner') ? 'bg-slate-50 shadow-lg rounded-xl' : '' }}">
+                        <a href="{{ route('banner.index') }}"
+                            class=" flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+                            sidebar-toggle-collapse="">
+                            <div class="{{($tab=='banner' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} text-dark-700 rounded-lg shadow-lg w-8 h-8 text-center py-1">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                               </div>
+                            <span class="ml-3 text-dark-500 text-sm font-light" sidebar-toggle-item="">Banner</span>
+                        </a>
+                    </li>
                     <li >
                         <button type="button"
                             class="{{ ($tab=='trainer') ? 'bg-slate-50 shadow-md rounded-xl' : '' }} w-full flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
@@ -99,6 +109,7 @@
                             </li>
                         </ul>
                     </li>
+
                     <li>
                         <button type="button"
                             class="w-full flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"

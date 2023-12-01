@@ -68,7 +68,7 @@
 
     <div class="w-full px-6 py-6 mx-auto">
         @yield('content')
-        <footer class="pt-4 fixed bottom-1">
+        <footer class="pt-4">
             <div class="w-full px-5  mx-auto pb-5">
                 ©2023 | Mudarribe Fitness
             </div>

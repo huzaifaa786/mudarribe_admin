@@ -80,13 +80,14 @@
                 </td>
                 <td class="px-3 py-4">
                     <x-badge  rounded flat red label="Rejected" class="bg-red-100">
-                       
+
                     </x-badge>
                 </td>
                 <td class="px-6 py-4">
                     <div class="flex flex-row">
-                        <div class="rounded-full border w-8 h-8 content-center pl-2 pt-1">
-                            <a href="{{route('trainer.delete',['id'=>$user['id']])}}"><i class="fa fa-trash" style="color: red"></i></a>
+                        <div class="rounded-full border w-8 h-8 content-center text-center py-1 ">
+                            <button class="deleteBtn" type="button" data-modal-toggle="popup-modal" id="{{$user['id']}}"><i class="fa fa-trash"
+                                    style="color: red"></i></button>
                         </div>
                         <div class="ml-2 mt-1">
                             <a href="{{route('trainer.approve',['id'=>$user['id']])}}" class="rounded-xl bg-yellow-300 text-white px-2 py-1">Approve</a>

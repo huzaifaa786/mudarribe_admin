@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TrainerController;
@@ -35,6 +36,8 @@ Route::get('trainer/rejected/index',[TrainerController::class,'rejectedTrainers'
 Route::get('trainer/posts/{id}',[TrainerController::class,'trainerPosts'])->name('trainer.posts');
 Route::get('trainer/approve/{id}',[TrainerController::class,'approve'])->name('trainer.approve');
 Route::get('trainer/delete/{id}',[TrainerController::class,'delete'])->name('trainer.delete');
+
+Route::get('banner/index',[BannerController::class,'index'])->name('banner.index');
 
 });
 

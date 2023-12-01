@@ -54,7 +54,7 @@ class TrainerController extends Controller
         return view('trainer.rejected',['users'=>$this->users,'tab'=>'trainer']);
     }
 
-    public function trainerPosts($id)
+    public function fetchPosts($id)
     {
         $this->posts = [];
         $firestore = app('firebase.firestore');
@@ -65,7 +65,12 @@ class TrainerController extends Controller
             $data = $post->data();
             $this->posts[] = $data;
         }
-       return view('trainer.posts',['posts'=>$this->posts,'tab'=>'trainer']);
+        return $this->posts;
+    }
+
+    public function trainerPosts($id)
+    {
+       return view('trainer.posts',['posts'=>$this->fetchPosts($id),'tab'=>'trainer']);
     }
 
     public function approve($id)
@@ -77,6 +82,10 @@ class TrainerController extends Controller
 
     public function delete($id)
     {
+        foreach($this->fetchPosts($id) as $post)
+        {
+            app('firebase.firestore')->database()->collection('trainer_posts')->document($post['id'])->delete();
+        }
         $this->auth->deleteUser($id);
         app('firebase.firestore')->database()->collection('users')->document($id)->delete();
         toastr()->success('Trainer Deleted successfully!');
