@@ -5,6 +5,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TrainerController;
+use App\Http\Controllers\TrainerEventController;
 use App\Livewire\Admin\AdminIndex;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Auth\Login;
@@ -34,6 +35,7 @@ Route::get('trainer/approved/index',[TrainerController::class,'aprrovedTrainers'
 Route::get('trainer/pending/index',[TrainerController::class,'pendingTrainers'])->name('trainer.pending');
 Route::get('trainer/rejected/index',[TrainerController::class,'rejectedTrainers'])->name('trainer.rejected');
 Route::get('trainer/posts/{id}',[TrainerController::class,'trainerPosts'])->name('trainer.posts');
+Route::get('trainer/events',[TrainerEventController::class,'index'])->name('trainer.event');
 Route::get('trainer/approve/{id}',[TrainerController::class,'approve'])->name('trainer.approve');
 Route::get('trainer/delete/{id}',[TrainerController::class,'delete'])->name('trainer.delete');
 

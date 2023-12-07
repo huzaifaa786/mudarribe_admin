@@ -105,7 +105,12 @@
                             <li>
                                 <a href="{{route('trainer.rejected')}}"
                                     class="text-sm text-dark-500 font-light rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"><span>Rejected</span>
-                                        </a>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('trainer.event')}}"
+                                    class="text-sm text-dark-500 font-light rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"><span>Events</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
