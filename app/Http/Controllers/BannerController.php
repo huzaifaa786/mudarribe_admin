@@ -8,7 +8,7 @@ class BannerController extends Controller
 {
     public function index()
     {
-        return view('banner.index',['tab'=>'banner']);
+        return view('banner.index', ['tab' => 'banner']);
     }
 
     public function setDummyData()
