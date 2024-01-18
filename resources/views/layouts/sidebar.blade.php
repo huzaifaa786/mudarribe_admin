@@ -59,11 +59,11 @@
                     </li>
                     <li>
                         <button type="button"
-                            class=" {{ ($tab=='Coupon') ? 'bg-slate-50 shadow-md rounded-xl' : '' }} w-full flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+                            class=" {{ ($tab=='CouponCode') ? 'bg-slate-50 shadow-md rounded-xl' : '' }} w-full flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
                             sidebar-toggle-collapse="" aria-controls="dropdown-users"
                             data-collapse-toggle="dropdown-users">
                             <div
-                                class=" {{($tab=='Coupon' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} bg-white shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
+                                class=" {{($tab=='CouponCode' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} bg-white shadow-lg shadow-gray-300 text-dark-700 w-8 h-8 p-2.5 mr-1 rounded-lg text-center grid place-items-center">
                                 <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>office</title>
@@ -94,13 +94,13 @@
                         </button>
                         <ul id="dropdown-users" sidebar-toggle-list="" class="pb-2 pt-1 hidden">
                             <li>
-                                <a href="{{route('coupon.index')}}"
+                                <a href="{{route('coupon.create')}}"
                                     class="text-sm text-dark-500 font-light rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"><span>Create
                                         </span>
                                     </a>
                             </li>
                             <li>
-                                <a href="{{route('coupon.show')}}"
+                                <a href="{{route('coupon.index')}}"
                                     class="text-sm text-dark-500 font-light rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"><span>Show All</span></a>
                             </li>
                         </ul>

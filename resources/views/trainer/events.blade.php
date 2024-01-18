@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main', 'Trainer')
-@section('sub', 'Approved')
+@section('sub', 'Events')
 
 @section('content')
     <div class="relative overflow-x-auto shadow-lg sm:rounded-xl  bg-white p-5 w-full">
