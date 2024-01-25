@@ -42,6 +42,12 @@ Route::group(['middleware' => 'firebase'], function () {
     Route::get('trainer/delete/{id}', [TrainerController::class, 'delete'])->name('trainer.delete');
 
     Route::get('banner/index', [BannerController::class, 'index'])->name('banner.index');
-    Route::post('couponcode/index', [CouponController::class, 'index'])->name('coupon.index');
+    Route::post('banner/update',[BannerController::class,'update'])->name('banner.update');
+    Route::get('couponcode/index', [CouponController::class, 'index'])->name('coupon.index');
     Route::get('allcoupon/index', [CouponController::class, 'setDummyCoupon'])->name('coupon.show');
+    Route::post('allcoupon/store', [CouponController::class, 'store'])->name('coupon.store');
+    Route::get('coupon/create', [CouponController::class,'create'] )->name('coupon.create');
+    Route::get('coupon/delete/{id}',[CouponController::class,'delete'])->name('coupon.delete');
+    Route::post('coupon/update',[CouponController::class,'update'])->name('coupon.update');
+
 });

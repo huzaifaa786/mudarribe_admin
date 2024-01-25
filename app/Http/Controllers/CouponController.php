@@ -55,4 +55,8 @@ class CouponController extends Controller
         toastr()->success('Coupon Deleted successfully!');
         return redirect()->back();
     }
+
+    public function create(){
+        return view('CouponCode.create',['tab'=>'CouponCode']);
+    }
 }
