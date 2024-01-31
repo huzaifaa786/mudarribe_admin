@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SalesController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TrainerController;
 use App\Http\Controllers\TrainerEventController;
@@ -50,4 +51,6 @@ Route::group(['middleware' => 'firebase'], function () {
     Route::get('coupon/delete/{id}',[CouponController::class,'delete'])->name('coupon.delete');
     Route::post('coupon/update',[CouponController::class,'update'])->name('coupon.update');
 
+    Route::get('sales/index', [SalesController::class, 'index'])->name('sales.index');
+    Route::post('sales/yearly' ,[SalesController::class,'filter'])->name('sales.yearly');
 });

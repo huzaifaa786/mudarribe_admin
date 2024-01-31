@@ -162,7 +162,16 @@
                             </li>
                         </ul>
                     </li>
-
+                    <li class="{{ ($tab=='Sales') ? 'bg-slate-50 shadow-lg rounded-xl' : '' }}">
+                        <a href="{{ route('sales.index') }}"
+                            class=" flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+                            sidebar-toggle-collapse="">
+                            <div class="{{($tab=='Sales' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' :'bg-white')}} text-dark-700 rounded-lg shadow-lg w-8 h-8 text-center py-1">
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                               </div>
+                            <span class="ml-3 text-dark-500 text-sm font-light" sidebar-toggle-item="">Sales</span>
+                        </a>
+                    </li>
 
                 </ul>
             </div>

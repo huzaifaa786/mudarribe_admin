@@ -37,7 +37,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="antialiased m-0 font-sans text-base font-normal leading-default bg-gray-50 text-slate-500">
+<body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
     @vite('resources/css/app.css')
 
     @include('layouts.navbar')
@@ -60,6 +60,11 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js">
 </script>
 
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script src="{{asset('assets/plugins/morris/morris.min.js')}}"></script>
+<script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
+
+<script src="{{asset('assets/pages/dashborad.js')}}"></script>
 {{-- data table script --}}
 <script>
     new DataTable('#data_table');
