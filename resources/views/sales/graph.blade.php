@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('main', 'Sales')
-@section('sub', '')
+@section('sub', 'Graph')
 
 @section('content')
 
 
-    <form action="{{ route('sales.yearly') }}" method="POST" id="graph">
+    <form action="{{ route('graph.filter') }}" method="POST" id="graph">
         @csrf
         <div class="flex">
             <select id="year" name="year"

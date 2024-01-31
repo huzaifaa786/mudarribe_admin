@@ -16,7 +16,7 @@ class SalesController extends Controller
 
     public function index()
     {
-        return view('sales.index', ['tab' => 'Sales']);
+        return view('sales.graph', ['tab' => 'Sales']);
     }
 
     public function filter(Request $request)
