@@ -139,6 +139,53 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <button type="button"
+                            class="{{ $tab == 'trainee' ? 'bg-slate-50 shadow-md rounded-xl' : '' }} w-full flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+                            sidebar-toggle-collapse="" aria-controls="dropdown-events"
+                            data-collapse-toggle="dropdown-events">
+                            <div
+                                class="{{ $tab == 'trainee' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' : 'bg-white' }} shadow-lg shadow-gray-300 text-dark-700 w-8 h-8  mr-1 rounded-lg text-center grid place-items-center">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                            </div>
+                            <span class="ml-3 text-sm font-light text-dark-500" sidebar-toggle-item="">Trainees</span>
+                            <svg sidebar-toggle-item="" class="w-4 h-4 ml-auto text-gray-700" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-events" sidebar-toggle-list="" class="hidden pt-1 pb-2">
+                            <li>
+                                <a href="{{ route('trainees') }}"
+                                    class="flex items-center p-2 text-sm font-light transition duration-75 rounded-lg text-dark-500 group hover:bg-gray-200 pl-11"><span>All
+                                        trainees</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="{{ $tab == 'reports' ? 'bg-slate-50 shadow-lg rounded-xl' : '' }}">
+                        <a href="{{ route('reports') }}"
+                            class=" flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+                            sidebar-toggle-collapse="">
+                            <div
+                                class="{{ $tab == 'reports' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' : 'bg-white' }} text-dark-700 rounded-lg shadow-lg w-8 h-8 text-center py-1">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                            </div>
+                            <span class="ml-3 text-sm font-light text-dark-500" sidebar-toggle-item="">Suggestion & Reports</span>
+                        </a>
+                    </li>
+                    <li class="{{ $tab == 'orders' ? 'bg-slate-50 shadow-lg rounded-xl' : '' }}">
+                        <a href="{{ route('orders') }}"
+                            class=" flex items-center py-2.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+                            sidebar-toggle-collapse="">
+                            <div
+                                class="{{ $tab == 'orders' ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' : 'bg-white' }} text-dark-700 rounded-lg shadow-lg w-8 h-8 text-center py-1">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                            </div>
+                            <span class="ml-3 text-sm font-light text-dark-500" sidebar-toggle-item="">Orders</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
