@@ -9,6 +9,7 @@
     <meta name="application-name" content="{{ config('app.name') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('admin/assets/img/apple-icon.png') }}" />
     <link rel="icon" type="image/png" href="{{ asset('admin/assets/img/favicon.png') }}" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -39,9 +40,19 @@
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
     @vite('resources/css/app.css')
+    <div x-data="{ open: true }">
+        <button @click="open = !open" class=" p-3 text-gray-800 focus:outline-none">
+            <svg x-show="!open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+            </svg>
+            <svg x-show="open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        @include('layouts.navbar')
+        @include('layouts.sidebar')
+    </div>
 
-    @include('layouts.navbar')
-    @include('layouts.sidebar')
 
     {{------- delete confirmation modal -------}}
     @include('components.modals.deleteModal')

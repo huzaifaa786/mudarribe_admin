@@ -1,19 +1,13 @@
-<aside id="sidebar"
-    class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 mt-5 ml-5 duration-200 bg-white shadow-xl rounded-xl lg:flex transition-width lg:w-64"
-    aria-label="Sidebar">
-
-    <button id="sidebar-toggle-button" class="fixed top-5 left-5 z-30 p-3 bg-white-200 rounded-full text-gray-800">
-        <i class="fas fa-bars"></i>
-    </button>
-    
-
+<div id="sidebar"
+    class="" aria-label="Sidebar"   @resize.window="if (window.innerWidth > 768) open = false" >
+<div :class="{'translate-x-0 fixed top-4 left-0 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 mt-5 ml-5 duration-200 bg-white shadow-xl rounded-xl lg:flex transition-width lg:w-64': open, '-translate-x-full': !open}">
     <div class="mb-5 -mt-8">
         <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
             sidenav-close></i>
-        <a class="block px-8 m-0 text-sm whitespace-nowrap text-slate-700" href="../pages/dashboard.html" target="_blank">
+        {{-- <a class="block px-8 m-0 text-sm whitespace-nowrap text-slate-700" href="../pages/dashboard.html" target="_blank"> --}}
             <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Mudarribe Fitness
                 Dashboard</span>
-        </a>
+        {{-- </a> --}}
     </div>
 
     <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"  />
@@ -195,34 +189,5 @@
             </div>
         </div>
     </div>
-</aside>
-
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-@section('script')
-<script>
-    const sidebar = document.getElementById('sidebar');
-    const sidebarToggleButton = document.getElementById('sidebar-toggle-button');
-
-    sidebarToggleButton.addEventListener('click', function() {
-        sidebar.classList.toggle('hidden');
-    });
-
-    // Add event listener to close the sidebar when clicking outside of it
-    window.addEventListener('click', function(event) {
-        if (!sidebar.contains(event.target) && !sidebarToggleButton.contains(event.target)) {
-            sidebar.classList.add('hidden');
-        }
-    });
-
-    // Prevent click events inside the sidebar from closing it
-    sidebar.addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
-</script>
-
-
-
-@endsection
-
-
-    
+</div>
+</div>

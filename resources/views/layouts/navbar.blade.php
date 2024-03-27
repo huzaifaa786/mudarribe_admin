@@ -1,4 +1,4 @@
-<main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200 first-line:">
+<main :class="{'ease-soft-in-out xl:ml-68.5  h-full max-h-screen rounded-xl transition-all duration-200 x-full first-line:': open, 'ease-soft-in-out h-full max-h-screen rounded-xl transition-all duration-200 x-full first-line:': !open}" class="">
     <!-- Navbar -->
     <nav style="background-color: #FDFEFE" class=" shadow-lg relative flex flex-wrap items-center justify-between px-0 py-4 mx-6 transition-all duration-250 ease-soft-in rounded-2xl lg:flex-nowrap lg:justify-start mt-5"
         navbar-main navbar-scroll="true">
