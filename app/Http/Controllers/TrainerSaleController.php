@@ -29,7 +29,7 @@ class TrainerSaleController extends Controller
 
         return $this->trainer;
     }
-    
+
     public function filter(Request $request)
     {
          $salesService = new TrainerSalesService();
@@ -50,7 +50,7 @@ class TrainerSaleController extends Controller
         $filteredOrders = $salesService->filterOrders($orders, $start_date, $end_date, $trainer_name);
         $filteredEvents = $salesService->filterEvents($events, $start_date, $end_date, $trainer_name);
 
-        return view('sales.allsales', ['tab' => 'Sales', 'trainers' => $trainers, 'orders' => $filteredOrders, 'events' => $filteredEvents, 'trainer_id' => $request->id, 'start_date' => $request->start_date, 'end_date' => $end_date->format('Y-m-d')]);
+        return view('sales.allSales', ['tab' => 'Sales', 'trainers' => $trainers, 'orders' => $filteredOrders, 'events' => $filteredEvents, 'trainer_id' => $request->id, 'start_date' => $request->start_date, 'end_date' => $end_date->format('Y-m-d')]);
     }
 
 }
