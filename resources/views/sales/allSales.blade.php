@@ -41,8 +41,8 @@
 
             </div>
         </form>
+
     </div>
-    {{-- ---------------------table--------------------- --}}
 
     <div class="relative w-full p-5 overflow-x-auto bg-white shadow-lg mt sm:rounded-xl">
         <table id="data_table" class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400"
@@ -64,11 +64,19 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $totalTrainerAmount = 0;
+                    $totalPlatformAmount = 0;
+                @endphp
                 @if (isset($orders) && isset($events))
                     @foreach ($orders as $order)
+                        @php
+                            $totalTrainerAmount += $order['amount'] * 0.8; // 80% for trainers
+                            $totalPlatformAmount += $order['amount'] * 0.2; // 20% for platform
+                        @endphp
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-
+                            <!-- Your table row for orders -->
                             <td scope="row"
                                 class="flex items-center py-4 text-gray-900 p whitespace-nowrap dark:text-white">
                                 <div class="">
@@ -87,9 +95,13 @@
                         </tr>
                     @endforeach
                     @foreach ($events as $event)
+                        @php
+                            $totalTrainerAmount += $event['amount'] * 0.8; // 80% for trainers
+                            $totalPlatformAmount += $event['amount'] * 0.2; // 20% for platform
+                        @endphp
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-
+                            <!-- Your table row for events -->
                             <td scope="row"
                                 class="flex items-center py-4 text-gray-900 p whitespace-nowrap dark:text-white">
                                 <div class="">
@@ -109,6 +121,18 @@
                     @endforeach
                 @endif
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                    <td class="font-semibold px-6 py-4">
+                        Total Trainer %: {{ $totalTrainerAmount }} AED
+                    </td>
+                    <td class="font-semibold px-6 py-4">
+                        Total Platform  %: {{ $totalPlatformAmount }}AED
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 @endsection
+
