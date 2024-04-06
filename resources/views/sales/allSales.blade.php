@@ -128,11 +128,10 @@
                         Total Trainer %: {{ $totalTrainerAmount }} AED
                     </td>
                     <td class="font-semibold px-6 py-4">
-                        Total Platform  %: {{ $totalPlatformAmount }}AED
+                        Total Platform %: {{ $totalPlatformAmount }}AED
                     </td>
                 </tr>
             </tfoot>
         </table>
     </div>
 @endsection
-
